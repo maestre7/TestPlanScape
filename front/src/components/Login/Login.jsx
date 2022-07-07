@@ -45,8 +45,8 @@ function Login() {
     const navigate = useNavigate();
     /* const onSubmit = async (data) => {
         /* await axios.post("http://localhost:3003/login/",
-                {"userlogin": data.user,
-                "userpass": md5(data.password)})
+                {"userLogin": data.user,
+                "userPass": md5(data.password)})
             .then((res) => {
                 if (res.status === 200) {
                     navigate('/post');
