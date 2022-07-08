@@ -43,8 +43,8 @@ function Login() {
     });
 
     const navigate = useNavigate();
-    /* const onSubmit = async (data) => {
-        /* await axios.post("http://localhost:3003/login/",
+    const onSubmit = async (data) => {
+        await axios.post("http://localhost:3003/login/",
                 {"userLogin": data.user,
                 "userPass": md5(data.password)})
             .then((res) => {
@@ -53,13 +53,13 @@ function Login() {
                 } else {
                     navigate('/register');
                 } 
-        }) */
-    /* }; */
+        })
+    }; 
 
     return (
         <div className="Login">
             <img src={googleLogo} alt="stars"/>
-            <form className="form" onSubmit={handleSubmit((d) => console.log(d))}>
+            <form className="form" onSubmit={handleSubmit(onSubmit)}>
                 <input
                     {...register("user")}
                     className="input"

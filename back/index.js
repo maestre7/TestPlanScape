@@ -1,10 +1,10 @@
 let app = require("express")();
 const cors = require("cors");
-const connectDB = require("./config/db");
+//const connectDB = require("./config/db");
 require("dotenv").config({ path: "./config/.env" });
 
 
-connectDB(); // establishing a database connection
+//connectDB(); // establishing a database connection
 
 //valid origins
 const allowedOrigins = ["http://localhost:3001",
