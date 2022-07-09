@@ -50,7 +50,7 @@ function Login() {
                 "userPass": md5(data.password)})
             .then((res) => {
                 if (res.status === 200) {
-                    navigate('/post');
+                    navigate('/1');
                 } else {
                     navigate('/register');
                 } 
