@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-import googleLogo from "../../assest/img/logoGoogle.svg";
+import googleLogo from "../../../assest/img/logoGoogle.svg";
 
 function NavBar(props) {
     const { tap } = props;

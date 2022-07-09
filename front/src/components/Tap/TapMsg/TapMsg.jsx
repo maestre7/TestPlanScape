@@ -12,7 +12,7 @@ function TapMsg(props) {
 
     return (
         <div>
-            {tap === 1 ? msg.hola : msg.que}
+            {tap === "1" ? msg.hola : msg.que}
         </div>
     )
 }

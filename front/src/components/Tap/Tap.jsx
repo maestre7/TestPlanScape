@@ -1,5 +1,7 @@
 
 import React from "react";
+import { useParams } from "react-router-dom";
+
 import NavBar from "./NavBar/NavBar";
 import TapMsg from "./TapMsg/TapMsg";
 import Dasboard from "./Dasboard/Dasboard";
@@ -10,7 +12,7 @@ function Tap() {
 
     return (<>
         <NavBar tap={id} />
-        {id === 0 ? <Dasboard /> : <TapMsg tap={id} />}       
+        {id === "0" ? <Dasboard /> : <TapMsg tap={id} />}       
     </>
     )
 }
