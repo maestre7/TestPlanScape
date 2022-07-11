@@ -43,7 +43,7 @@ const schema = yup.object({
 });
 
 
-function Login() {
+function Register() {
     // set of functions for handling the form and its checks
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
@@ -57,7 +57,7 @@ function Login() {
                 "userPass": md5(data.password)})
             .then((res) => {
                 if (res.status === 200) {
-                    navigate('/post');
+                    navigate('/1');
                 } else {
                     navigate('/register');
                 } 
@@ -65,8 +65,8 @@ function Login() {
     }; 
 
     return (
-        <div className="Login">
-            <img src={googleLogo} alt="stars"/>
+        <div className="login">
+            <img src={googleLogo} alt="stars" className="img--stars" />
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
                 {/* USER */}
                 <input
@@ -116,4 +116,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default Register;

@@ -11,7 +11,7 @@ function TapMsg(props) {
     const { tap } = props;
 
     return (
-        <div>
+        <div className="tap--msg">
             {tap === "1" ? msg.hola : msg.que}
         </div>
     )

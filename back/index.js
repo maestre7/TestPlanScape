@@ -7,8 +7,9 @@ require("dotenv").config({ path: "./config/.env" });
 //connectDB(); // establishing a database connection
 
 //valid origins
-const allowedOrigins = ["http://localhost:3001",
-                        "http://localhost:3000"];
+const allowedOrigins = ["http://localhost:3000",
+                        "http://localhost:19006",
+                        "http://localhost:19002",];
 
 app.use(cors({
     origin: function(origin, callback){

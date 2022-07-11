@@ -58,8 +58,8 @@ function Login() {
     }; 
 
     return (
-        <div className="Login">
-            <img src={googleLogo} alt="stars"/>
+        <div className="login">
+            <img src={googleLogo} alt="stars" className="img--stars" />
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
                 <input
                     {...register("user")}
