@@ -1,0 +1,104 @@
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #ffffff;
+    color: #000;
+}
+
+.app {
+    width: 60%;
+    margin-left: 21%;
+    margin-top: 14%;
+}
+
+.login {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login > button:last-child {
+    background-color: #ffffff;
+}
+
+.img--stars{
+    width: 90%;
+}
+
+.form {
+    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.form > button {
+    margin-top: 15px;
+}
+
+.input{
+    height: 20px;
+    margin: 5px;
+    padding-left: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.input::placeholder {
+    padding-left: 5px;
+}
+
+.primary-button {
+    height: 30px;
+    width: 110px;
+    margin-top: 5px;
+    margin-left: 35px;
+    border-radius: 5px;
+    font-weight : bold;
+}
+
+.navbar {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.navbar > p {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.modal {
+    height: 25px;
+}
+
+.tap--msg {
+    flex-wrap: nowrap;
+    padding: 5px;
+    margin-top: 80px;
+    font-weight: bold;
+    font-size: 2.9rem;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: darkgray;
+    border-radius: 25px;
+}
+
+.link {
+    padding: 40px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-decoration: none;
+}

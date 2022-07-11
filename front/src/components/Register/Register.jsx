@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -10,12 +9,12 @@ import md5 from 'md5';
 
 import googleLogo from "../../assest/img/logoGoogle.svg";
 
-
 /* MSG Error */
 const errorMessages = {
-  required: "This field is required",
-  min: (n) => `Must have a minimum of ${n} characters`,
-  pass: "The password must have at least one uppercase, one lowercase and one number.",
+    required: "This field is required",
+    min: (n) => `Must have a minimum of ${n} characters`,
+    pass: "The password must have at least one uppercase, one lowercase and one number.",
+    passRepeat: "passwords have to match",
 };
 
 /* Field Verification */
@@ -33,10 +32,18 @@ const schema = yup.object({
         passwordRegex,
         errorMessages.pass
         ),
+    passwordRepeat: yup
+        .string()
+        .required(errorMessages.required)
+        .min(8, errorMessages.min(8))
+        .matches(
+        passwordRegex,
+        errorMessages.pass)
+        .oneOf([yup.ref("password"), null], errorMessages.passRepeat),
 });
 
 
-function Login() {
+function Register() {
     // set of functions for handling the form and its checks
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
@@ -45,7 +52,7 @@ function Login() {
     const navigate = useNavigate();
 
     const onSubmit = async (data) => {
-        await axios.post("http://localhost:3003/login/",
+        await axios.post("http://localhost:3003/register/",
                 {"userLogin": data.user,
                 "userPass": md5(data.password)})
             .then((res) => {
@@ -61,6 +68,7 @@ function Login() {
         <div className="login">
             <img src={googleLogo} alt="stars" className="img--stars" />
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
+                {/* USER */}
                 <input
                     {...register("user")}
                     className="input"
@@ -73,7 +81,7 @@ function Login() {
                         {errors.user?.message} 
                     </div>
                 }
-
+                {/* PASSWORD */}
                 <input
                     {...register("password")}
                     className="input"
@@ -86,17 +94,26 @@ function Login() {
                         {errors.password?.message} 
                     </div>
                 }
+                {/* PASSWORD REPEAT */}
+                <input 
+                    {...register("passwordRepeat")}
+                    className="input"
+                    type="password"
+                    placeholder="Confirm Password"
+                    name="passwordRepeat"
+                />
+                {errors.passwordRepeat?.message && 
+                    <div className='passwordRepeat--message-errors'>
+                        {errors.passwordRepeat?.message}
+                    </div>
+                }
 
                 <button type="submit" className="primary-button">
-                    Login
+                    Register
                 </button>
             </form>
-
-            <button className="primary-button" onClick={() => navigate('/register')}>
-                Register
-            </button>
         </div>
     );
 }
 
-export default Login;
+export default Register;
